@@ -3,220 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SCEdit Demo</title>
+    <title>每日事项记录</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
+            background-color: #f4f4f9;
+            color: #333;
         }
-        /* 整体布局样式 */
-        .section {
-        margin-bottom: 80px; /* 每块内容之间的间距 */
-        padding: 20px; /* 每块内容的内边距 */
-        border: 1px solid #ccc; /* 边框样式 */
-        border-radius: 10px; /* 圆角边框 */
-        background-color: #f9f9f9; /* 背景颜色 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
-        /* 标题样式 */
-        .section-title {
-            font-size: 24px; /* 标题字体大小 */
-            font-weight: bold; /* 标题加粗 */
-            text-align: center; /* 标题居中 */
-            margin-bottom: 20px; /* 标题和内容之间的间距 */
-            color: #333; /* 标题颜色 */
-        }
-        .gallery {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        .gallery img {
-            max-width: 300px;
-            max-height: 300px;
-            object-fit: cover;
-            border-radius: 10px;
+        .date-block {
+            background-color: #ffffff;
+            border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+            margin-bottom: 20px;
+            padding: 15px;
         }
-        .gallery img:hover {
-            transform: scale(1.05);
-        }
-        .artistic-text {
-            margin-bottom: 50px;
-            font-size: 24px;
+        .date-header {
+            font-size: 1.5em;
             font-weight: bold;
             color: #333;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+        .task-list {
+            list-style: none;
+            padding: 0;
+        }
+        .task-item {
+            background-color: #fafafa;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        .task-item img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        .task-item h3 {
+            margin: 0;
+            color: #333;
+            font-size: 1.2em;
+        }
+        .task-item p {
+            color: #666;
+            font-size: 1em;
+        }
+        .footer {
             text-align: center;
-            font-family: 'Lucida Handwriting', cursive;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-        .gallery-2 {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .gallery-2 img {
-            max-width: 300px;
-            max-height: 300px;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-            flex: 1;
-        }
-
-        .gallery-2 img:hover {
-            transform: scale(1.05);
+            padding: 20px;
+            font-size: 0.9em;
+            color: #777;
+            background-color: #ffffff;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
-    <div class="section">
-        <div class="section-title">SD1.5 SD2.1 SDXL 10 Results (After 2000 steps)</div>
-        <div class="gallery">
-            <img src="sd15_512/0_0_0_probe_0_[512_512_3].jpg" alt="SD15 Image">
-            <img src="sd21_768/0_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-            <img src="sdxl_1024/0_0_0_probe_0_[1024_1024_3].jpg" alt="SDXL Image">
-        </div>
-        <div class="artistic-text">A close up of a small rabbit wearing a hat and scarf</div>
-        
-        <div class="gallery">
-            <img src="sd15_512/1_0_0_probe_0_[512_512_3].jpg" alt="SD15 Image">
-            <img src="sd21_768/1_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-            <img src="sdxl_1024/1_0_0_probe_0_[1024_1024_3].jpg" alt="SDXL Image">
-        </div>
-        <div class="artistic-text">A stuffed animal with a flower crown on its head</div>
-        
-        <div class="gallery">
-            <img src="sd15_512/2_0_0_probe_0_[512_512_3].jpg" alt="SD15 Image">
-            <img src="sd21_768/2_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-            <img src="sdxl_1024/2_0_0_probe_0_[1024_1024_3].jpg" alt="SDXL Image">
-        </div>
-        <div class="artistic-text">A cartoon chicken with a hat and sunglasses on</div>
-        
-        <div class="gallery">
-            <img src="sd15_512/3_0_0_probe_0_[512_512_3].jpg" alt="SD15 Image">
-            <img src="sd21_768/3_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-            <img src="sdxl_1024/3_0_0_probe_0_[1024_1024_3].jpg" alt="SDXL Image">
-        </div>
-        <div class="artistic-text">A cartoon character with a gun and a jacket on</div>
-        
-        <div class="gallery">
-            <img src="sd15_512/4_0_0_probe_0_[512_512_3].jpg" alt="SD15 Image">
-            <img src="sd21_768/4_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-            <img src="sdxl_1024/4_0_0_probe_0_[1024_1024_3].jpg" alt="SDXL Image">
-        </div>
-        <div class="artistic-text">A small dollhouse with a bed and a desk</div>
-        
-        <div class="gallery">
-            <img src="sd15_512/5_0_0_probe_0_[512_512_3].jpg" alt="SD15 Image">
-            <img src="sd21_768/5_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-            <img src="sdxl_1024/5_0_0_probe_0_[1024_1024_3].jpg" alt="SDXL Image">
-        </div>
-        <div class="artistic-text">A cartoon dog with a backpack and a megaphone</div>
-        
-        <div class="gallery">
-            <img src="sd15_512/6_0_0_probe_0_[512_512_3].jpg" alt="SD15 Image">
-            <img src="sd21_768/6_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-            <img src="sdxl_1024/6_0_0_probe_0_[1024_1024_3].jpg" alt="SDXL Image">
-        </div>
-        <div class="artistic-text">A trowel with a handle on a yellow background</div>
-        
-        <div class="gallery">
-            <img src="sd15_512/7_0_0_probe_0_[512_512_3].jpg" alt="SD15 Image">
-            <img src="sd21_768/7_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-            <img src="sdxl_1024/7_0_0_probe_0_[1024_1024_3].jpg" alt="SDXL Image">
-        </div>
-        <div class="artistic-text">A sheep with very big horns</div>
-        
-        <div class="gallery">
-            <img src="sd15_512/8_0_0_probe_0_[512_512_3].jpg" alt="SD15 Image">
-            <img src="sd21_768/8_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-            <img src="sdxl_1024/8_0_0_probe_0_[1024_1024_3].jpg" alt="SDXL Image">
-        </div>
-        <div class="artistic-text">A small toy of a boy with a tie and a suit</div>
-        
-        <div class="gallery">
-            <img src="sd15_512/9_0_0_probe_0_[512_512_3].jpg" alt="SD15 Image">
-            <img src="sd21_768/9_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-            <img src="sdxl_1024/9_0_0_probe_0_[1024_1024_3].jpg" alt="SDXL Image">
-        </div>
-        <div class="artistic-text">A pig with a backpack on its back</div>
+
+<div class="container">
+    <div class="date-block">
+        <div class="date-header">2024.12.31</div>
+        <ul class="task-list">
+            <!-- <li class="task-item">
+                <h3>完成工作报告</h3>
+                <p>编写并提交了今天的工作报告，包含了本月的项目进展情况。</p>
+                <img src="work_report_image.jpg" alt="工作报告">
+            </li>
+            <li class="task-item">
+                <h3>团队会议</h3>
+                <p>与团队成员召开了讨论会议，明确了下一阶段的工作目标。</p>
+                <img src="meeting_image.jpg" alt="团队会议">
+            </li> -->
+        </ul>
     </div>
 
-
-
-    <div class="section">
-        <div class="section-title">SD2.1 10 Results at 0 and 2000 steps</div>
-        <div class="gallery-2">
-            <img src="sd21_768_0step/0_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image 0">
-            <img src="sd21_768/0_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-        </div>
-        <div class="artistic-text">A close up of a small rabbit wearing a hat and scarf</div>
-        
-        <div class="gallery-2">
-            <img src="sd21_768_0step/1_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image 0">
-            <img src="sd21_768/1_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-        </div>
-        <div class="artistic-text">A stuffed animal with a flower crown on its head</div>
-        
-        <div class="gallery-2">
-            <img src="sd21_768_0step/2_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image 0">
-            <img src="sd21_768/2_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-        </div>
-        <div class="artistic-text">A cartoon chicken with a hat and sunglasses on</div>
-        
-        <div class="gallery-2">
-            <img src="sd21_768_0step/3_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image 0">
-            <img src="sd21_768/3_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-        </div>
-        <div class="artistic-text">A cartoon character with a gun and a jacket on</div>
-        
-        <div class="gallery-2">
-            <img src="sd21_768_0step/4_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image 0">
-            <img src="sd21_768/4_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-        </div>
-        <div class="artistic-text">A small dollhouse with a bed and a desk</div>
-        
-        <div class="gallery-2">
-            <img src="sd21_768_0step/5_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image 0">
-            <img src="sd21_768/5_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-        </div>
-        <div class="artistic-text">A cartoon dog with a backpack and a megaphone</div>
-        
-        <div class="gallery-2">
-            <img src="sd21_768_0step/6_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image 0">
-            <img src="sd21_768/6_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-        </div>
-        <div class="artistic-text">A trowel with a handle on a yellow background</div>
-        
-        <div class="gallery-2">
-            <img src="sd21_768_0step/7_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image 0">
-            <img src="sd21_768/7_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-        </div>
-        <div class="artistic-text">A sheep with very big horns</div>
-        
-        <div class="gallery-2">
-            <img src="sd21_768_0step/8_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image 0">
-            <img src="sd21_768/8_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-        </div>
-        <div class="artistic-text">A small toy of a boy with a tie and a suit</div>
-        
-        <div class="gallery-2">
-            <img src="sd21_768_0step/9_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image 0">
-            <img src="sd21_768/9_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-        </div>
-        <div class="artistic-text">A pig with a backpack on its back</div>
+    <div class="date-block">
+        <div class="date-header">2024.12.30</div>
+        <ul class="task-list">
+            <li class="task-item">
+                <h3>实验情况</h3>
+                <p>可视化UNet Middle Block中的Cross Attention Map，通过SAM获得原始视频的对应物体Mask的位置</p>
+                <p>目前是选取middle block中的SpatialTransformerWithAdapter中的attn2可视化</p>
+                <img src="Images/241230/1.png">
+                <img src="Images/241230/2.png">
+                <img src="Images/241230/3.png">
+            </li>
+            <li class="task-item">
+                <h3>存在的问题</h3>
+                <p>整个UNet网络中encode block 16层，middle block 4层，decode block 16层，都有对应的CroAttn；
+                    并且不同的去噪步map图也有差异，选取哪个timestep哪个block的CroAttn开始控制无法判断</p>
+                <p>可视化的Attention Map并没有呈现明显的物体轮廓，与参考论文中预期的结果有差异</p>
+            </li>
+        </ul>
     </div>
+
+    <!-- 添加更多日期和事项 -->
+
+</div>
+
+<div class="footer">
+    <p>© hcc 每日事项记录</p>
+</div>
+
 </body>
-</html>
+</html>·
