@@ -71,18 +71,46 @@
 
 <div class="container">
     <div class="date-block">
+        <div class="date-header">2025.1.14-16</div>
+        <ul class="task-list">
+            <li class="task-item">
+                <h3>实验情况</h3>
+                <p>对数据集中数量为11w的视频利用llama2过滤，保留其中有明显主体运动的视频，为1w左右量级；<br>
+                    对数据集的视频做预处理，video和control_video的其中一个例子如下所示，利用这样的视频对模型进行训练；<br>
+                    阅读了和ID motion相关的论文；<br>
+                    因为llama过滤和SAM模型分割的时间较长，因此完成了该部分的代码测试（3个视频），需要等待llama和SAM的结果进行训练；<br>
+                    对于未过滤的视频直接进行了训练（验证视频2个，每500step生成）
+                </p>
+                <video width="400" controls>
+                    <source src="Images/250117/b0o.mp4" type="video/mp4">
+                </video>
+                <video width="400" controls>
+                    <source src="Images/250117/b0c.mp4" type="video/mp4">
+                </video>
+                
+            </li>
+            <li class="task-item">
+                <h3>明天计划</h3>
+                <p>等待SAM分割结果进行新的训练；<br>
+                根据训练结果判断是否加入Animal Kingdom数据集进行训练；<br>
+                </p>
+        </ul>
+    </div>
+
+    <div class="date-block">
         <div class="date-header">2025.1.13</div>
         <ul class="task-list">
             <li class="task-item">
                 <h3>实验情况</h3>
-                <p>完成多卡训练的测试，对所有视频进行sam分割
+                <p>完成多卡训练的测试，对所有视频进行sam分割的代码尝试
                 </p>
                 
             </li>
             <li class="task-item">
                 <h3>明天计划</h3>
-                <p>用sam分割后的视频进行模型的训练</p>
+                <p>改变dataset部分的代码逻辑，用sam分割后的视频跑通模型的训练流程</p>
         </ul>
+    </div>
 
     <div class="date-block">
         <div class="date-header">2025.1.7</div>
