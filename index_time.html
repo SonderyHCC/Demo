@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日事项记录</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .date-block {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+        .date-header {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+        .task-list {
+            list-style: none;
+            padding: 0;
+        }
+        .task-item {
+            background-color: #fafafa;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        .task-item img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        .task-item h3 {
+            margin: 0;
+            color: #333;
+            font-size: 1.2em;
+        }
+        .task-item p {
+            color: #666;
+            font-size: 1em;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            color: #777;
+            background-color: #ffffff;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="date-block">
+        <div class="date-header">2025.1.14-16</div>
+        <ul class="task-list">
+            <li class="task-item">
+                <h3>实验情况</h3>
+                <p>对数据集中数量为11w的视频利用llama2过滤，保留其中有明显主体运动的视频，为1w左右量级；<br>
+                    对数据集的视频做预处理，video和control_video的其中一个例子如下所示，利用这样的视频对模型进行训练；<br>
+                    阅读了和ID motion相关的论文；<br>
+                    因为llama过滤和SAM模型分割的时间较长，因此完成了该部分的代码测试（3个视频），需要等待llama和SAM的结果进行训练；<br>
+                    对于未过滤的视频直接进行了训练（验证视频2个，每500step生成）
+                </p>
+                <img src="Images/250117/1.png">
+                <img src="Images/250117/2.png">
+                
+            </li>
+            <li class="task-item">
+                <h3>明天计划</h3>
+                <p>等待SAM分割结果进行新的训练；<br>
+                根据训练结果判断是否加入Animal Kingdom数据集进行训练；<br>
+                </p>
+        </ul>
+    </div>
+
+    <div class="date-block">
+        <div class="date-header">2025.1.13</div>
+        <ul class="task-list">
+            <li class="task-item">
+                <h3>实验情况</h3>
+                <p>完成多卡训练的测试，对所有视频进行sam分割的代码尝试
+                </p>
+                
+            </li>
+            <li class="task-item">
+                <h3>明天计划</h3>
+                <p>改变dataset部分的代码逻辑，用sam分割后的视频跑通模型的训练流程</p>
+        </ul>
+    </div>
+
+    <div class="date-block">
+        <div class="date-header">2025.1.7</div>
+        <ul class="task-list">
+            <li class="task-item">
+                <h3>实验情况</h3>
+                <p>可视化了最后一个timestep的不同head frame的cross attention，发现会呈现物体，但是差异很大；
+                    调整了训练代码支持低显存的训练；
+                </p>
+                
+            </li>
+            <li class="task-item">
+                <h3>明天计划</h3>
+                <p>从目标检测的论文当中去看对于Attention map的定位；过滤数据集，处理数据集到支持的格式进行训练</p>
+        </ul>
+    </div>
+
+    <div class="date-block">
+        <div class="date-header">2025.1.6</div>
+        <ul class="task-list">
+            <li class="task-item">
+                <h3>实验情况</h3>
+                <p>阅读CogVideoX，SparseCtrl等论文，其中CogVideoX采取的训练方式是分层（先大范围预训练再在过滤的高清数据集上finetune）；数据集选择WebVid-10M，OpenVid-1M；得到了+controlnet和canny的inference的结果
+                </p>
+                
+            </li>
+            <li class="task-item">
+                <h3>明天计划</h3>
+                <p>将数据集进行处理，根据去除主体的mask，提取对应的canny作为训练数据集</p>
+        </ul>
+    </div>
+
+    <div class="date-block">
+        <div class="date-header">2025.1.3</div>
+        <ul class="task-list">
+            <li class="task-item">
+                <h3>实验情况</h3>
+                <p>确定训练框架为CogVIdeoX+controlnet的训练框架，和师兄开会讨论过后，查看当前论文的数据集设置;
+                    先确定CrossAttn的hw为256在最后几步的时候是否具有明显的物体轮廓
+                </p>
+                
+            </li>
+            <li class="task-item">
+                <h3>明天计划</h3>
+                <p>完成inference代码的测试，调研相关论文中数据集部分</p>
+        </ul>
+    </div>
+
+    <div class="date-block">
+        <div class="date-header">2025.1.2</div>
+        <ul class="task-list">
+            <li class="task-item">
+                <h3>实验情况</h3>
+                <p>阅读T2V模型+Control条件的论文，选择模型+数据集设置</p>
+                
+            </li>
+            <li class="task-item">
+                <h3>明天计划</h3>
+                <p>在通院服务器上跑通 https://github.com/TheDenk/cogvideox-controlnet 的代码训练</p>
+        </ul>
+    </div>
+
+    <div class="date-block">
+        <div class="date-header">2024.12.31</div>
+        <ul class="task-list">
+            <li class="task-item">
+                <h3>实验情况</h3>
+                <p>将cross attention的控制加入网络未下采样之前，即分辨率大小为256*256时通过mask控制CrossAttn完成视频的生成，下面是两个生成的例子</p>
+                <video width="400" controls>
+                    <source src="Images/241231/1.mp4" type="video/mp4">
+                </video>
+                <video width="400" controls>
+                    <source src="Images/241231/2.mp4" type="video/mp4">
+                </video>
+            </li>
+            <li class="task-item">
+                <h3>明天计划</h3>
+                <p>从结果来看视频并没有实现位置和对应prompt的生成，可以进一步探索加入控制的网络结构位置和方式；对于学长那边的T2V模型训练的baseline进行调研</p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="date-block">
+        <div class="date-header">2024.12.30</div>
+        <ul class="task-list">
+            <li class="task-item">
+                <h3>实验情况</h3>
+                <p>可视化UNet Middle Block中的Cross Attention Map，通过SAM获得原始视频的对应物体Mask的位置</p>
+                <p>目前是选取middle block中的SpatialTransformerWithAdapter中的attn2可视化</p>
+                <img src="Images/241230/1.png">
+                <img src="Images/241230/2.png">
+                <img src="Images/241230/3.png">
+            </li>
+            <li class="task-item">
+                <h3>存在的问题</h3>
+                <p>整个UNet网络中encode block 16层，middle block 4层，decode block 16层，都有对应的CroAttn；
+                    并且不同的去噪步map图也有差异，选取哪个timestep哪个block的CroAttn开始控制无法判断</p>
+                <p>可视化的Attention Map并没有呈现明显的物体轮廓，与参考论文中预期的结果有差异</p>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 添加更多日期和事项 -->
+
+</div>
+
+<div class="footer">
+    <p>© hcc 每日事项记录</p>
+</div>
+
+</body>
+</html>·
