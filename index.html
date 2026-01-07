@@ -3,220 +3,586 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SCEdit Demo</title>
+    <title>Action Verb Hierarchy (Optimized)</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
+            padding: 20px;
+            background-color: #f8f9fa;
         }
-        /* 整体布局样式 */
-        .section {
-        margin-bottom: 80px; /* 每块内容之间的间距 */
-        padding: 20px; /* 每块内容的内边距 */
-        border: 1px solid #ccc; /* 边框样式 */
-        border-radius: 10px; /* 圆角边框 */
-        background-color: #f9f9f9; /* 背景颜色 */
-        }
-        /* 标题样式 */
-        .section-title {
-            font-size: 24px; /* 标题字体大小 */
-            font-weight: bold; /* 标题加粗 */
-            text-align: center; /* 标题居中 */
-            margin-bottom: 20px; /* 标题和内容之间的间距 */
-            color: #333; /* 标题颜色 */
-        }
-        .gallery {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        .gallery img {
-            max-width: 300px;
-            max-height: 300px;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-        .gallery img:hover {
-            transform: scale(1.05);
-        }
-        .artistic-text {
-            margin-bottom: 50px;
-            font-size: 24px;
-            font-weight: bold;
-            color: #333;
+
+        h2 {
             text-align: center;
-            font-family: 'Lucida Handwriting', cursive;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-        .gallery-2 {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
+            color: #333;
             margin-bottom: 20px;
         }
 
-        .gallery-2 img {
-            max-width: 300px;
-            max-height: 300px;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-            flex: 1;
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            position: sticky;
+            top: 0;
+            background: #f8f9fa;
+            padding: 10px;
+            z-index: 100;
         }
 
-        .gallery-2 img:hover {
-            transform: scale(1.05);
+        .legend-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        #tree-container {
+            width: 100%;
+            /* Height is handled by SVG content, removed fixed height here for scrolling */
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            overflow: auto;
+        }
+
+        .node circle {
+            fill: #fff;
+            stroke-width: 3px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .node text {
+            font: 14px sans-serif; 
+            fill: #333;
+        }
+
+        .link {
+            fill: none;
+            stroke: #d1d5db;
+            stroke-width: 1.5px;
+            transition: all 0.5s;
+        }
+
+        /* Tooltip styling */
+        div.tooltip {
+            position: absolute;
+            text-align: left;
+            padding: 12px;
+            font: 13px sans-serif;
+            background: rgba(33, 37, 41, 0.95);
+            color: #fff;
+            border-radius: 6px;
+            pointer-events: none;
+            max-width: 350px;
+            line-height: 1.5;
+            z-index: 20;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            opacity: 0;
+            transition: opacity 0.2s;
+            border: 1px solid #444;
+        }
+
+        .tooltip strong {
+            color: #61dafb;
+            display: block;
+            margin-bottom: 6px;
+            font-size: 14px;
+            border-bottom: 1px solid #555;
+            padding-bottom: 4px;
         }
     </style>
 </head>
 <body>
-    <div class="section">
-        <div class="section-title">SD1.5 SD2.1 SDXL 10 Results (After 2000 steps)</div>
-        <div class="gallery">
-            <img src="sd15_512/0_0_0_probe_0_[512_512_3].jpg" alt="SD15 Image">
-            <img src="sd21_768/0_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-            <img src="sdxl_1024/0_0_0_probe_0_[1024_1024_3].jpg" alt="SDXL Image">
+
+    <h2>Action Verb Hierarchy</h2>
+    
+    <div class="legend">
+        <div class="legend-item">
+            <div class="dot" style="background-color: #4A90E2;"></div>
+            <span>Category Cluster</span>
         </div>
-        <div class="artistic-text">A close up of a small rabbit wearing a hat and scarf</div>
-        
-        <div class="gallery">
-            <img src="sd15_512/1_0_0_probe_0_[512_512_3].jpg" alt="SD15 Image">
-            <img src="sd21_768/1_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-            <img src="sdxl_1024/1_0_0_probe_0_[1024_1024_3].jpg" alt="SDXL Image">
+        <div class="legend-item">
+            <div class="dot" style="background-color: #ff9f43;"></div>
+            <span>Specific Verb</span>
         </div>
-        <div class="artistic-text">A stuffed animal with a flower crown on its head</div>
-        
-        <div class="gallery">
-            <img src="sd15_512/2_0_0_probe_0_[512_512_3].jpg" alt="SD15 Image">
-            <img src="sd21_768/2_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-            <img src="sdxl_1024/2_0_0_probe_0_[1024_1024_3].jpg" alt="SDXL Image">
-        </div>
-        <div class="artistic-text">A cartoon chicken with a hat and sunglasses on</div>
-        
-        <div class="gallery">
-            <img src="sd15_512/3_0_0_probe_0_[512_512_3].jpg" alt="SD15 Image">
-            <img src="sd21_768/3_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-            <img src="sdxl_1024/3_0_0_probe_0_[1024_1024_3].jpg" alt="SDXL Image">
-        </div>
-        <div class="artistic-text">A cartoon character with a gun and a jacket on</div>
-        
-        <div class="gallery">
-            <img src="sd15_512/4_0_0_probe_0_[512_512_3].jpg" alt="SD15 Image">
-            <img src="sd21_768/4_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-            <img src="sdxl_1024/4_0_0_probe_0_[1024_1024_3].jpg" alt="SDXL Image">
-        </div>
-        <div class="artistic-text">A small dollhouse with a bed and a desk</div>
-        
-        <div class="gallery">
-            <img src="sd15_512/5_0_0_probe_0_[512_512_3].jpg" alt="SD15 Image">
-            <img src="sd21_768/5_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-            <img src="sdxl_1024/5_0_0_probe_0_[1024_1024_3].jpg" alt="SDXL Image">
-        </div>
-        <div class="artistic-text">A cartoon dog with a backpack and a megaphone</div>
-        
-        <div class="gallery">
-            <img src="sd15_512/6_0_0_probe_0_[512_512_3].jpg" alt="SD15 Image">
-            <img src="sd21_768/6_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-            <img src="sdxl_1024/6_0_0_probe_0_[1024_1024_3].jpg" alt="SDXL Image">
-        </div>
-        <div class="artistic-text">A trowel with a handle on a yellow background</div>
-        
-        <div class="gallery">
-            <img src="sd15_512/7_0_0_probe_0_[512_512_3].jpg" alt="SD15 Image">
-            <img src="sd21_768/7_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-            <img src="sdxl_1024/7_0_0_probe_0_[1024_1024_3].jpg" alt="SDXL Image">
-        </div>
-        <div class="artistic-text">A sheep with very big horns</div>
-        
-        <div class="gallery">
-            <img src="sd15_512/8_0_0_probe_0_[512_512_3].jpg" alt="SD15 Image">
-            <img src="sd21_768/8_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-            <img src="sdxl_1024/8_0_0_probe_0_[1024_1024_3].jpg" alt="SDXL Image">
-        </div>
-        <div class="artistic-text">A small toy of a boy with a tie and a suit</div>
-        
-        <div class="gallery">
-            <img src="sd15_512/9_0_0_probe_0_[512_512_3].jpg" alt="SD15 Image">
-            <img src="sd21_768/9_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-            <img src="sdxl_1024/9_0_0_probe_0_[1024_1024_3].jpg" alt="SDXL Image">
-        </div>
-        <div class="artistic-text">A pig with a backpack on its back</div>
     </div>
 
+    <div id="tree-container"></div>
+    <div class="tooltip" id="tooltip"></div>
 
+<script>
+    // --- 1. Data Preparation (English Only, Flattened Singletons) ---
+    const rawData = {
+        "name": "Action Verbs",
+        "type": "root",
+        "children": [
+            // Multi-Verb Clusters (Keep Hierarchy)
+            {
+                "name": "Transportation & Body Pos.",
+                "desc": "Actions involving operating vehicles, traveling, or specific body orientations.",
+                "type": "cluster",
+                "children": [
+                    { "name": "drive", "desc": "Operating a motor vehicle from within, specifically controlling speed and direction via a steering wheel.", "type": "leaf" },
+                    { "name": "lie_on", "desc": "Resting the body horizontally on a surface, distinct from active movement.", "type": "leaf" },
+                    { "name": "race", "desc": "Competing in speed against others, typically involving aggressive driving or running.", "type": "leaf" },
+                    { "name": "ride", "desc": "Traveling by straddling a vehicle (like a bike or horse) or sitting as a passive passenger.", "type": "leaf" },
+                    { "name": "row", "desc": "Propelling a boat through water using oars via repetitive arm pulling motions.", "type": "leaf" }
+                ]
+            },
+            {
+                "name": "Close-Range Manual Interaction",
+                "desc": "Using hands to manipulate objects, animals, or people closely.",
+                "type": "cluster",
+                "children": [
+                    { "name": "fill", "desc": "Adding substance to a container or space until it reaches capacity.", "type": "leaf" },
+                    { "name": "groom", "desc": "Brushing, cleaning, or tending to the appearance of an animal or person.", "type": "leaf" },
+                    { "name": "hold", "desc": "Grasping and supporting an object steadily in the hands without necessarily moving it.", "type": "leaf" },
+                    { "name": "hop_on", "desc": "Quickly jumping or stepping onto a vehicle or elevated surface.", "type": "leaf" },
+                    { "name": "hug", "desc": "Embracing someone or something tightly by wrapping both arms around them.", "type": "leaf" }
+                ]
+            },
+            {
+                "name": "Transporting & Attaching",
+                "desc": "Moving items or having items attached to the body.",
+                "type": "cluster",
+                "children": [
+                    { "name": "carry", "desc": "Supporting an object's weight while moving it from one place to another.", "type": "leaf" },
+                    { "name": "drag", "desc": "Pulling something heavy along the ground behind oneself.", "type": "leaf" },
+                    { "name": "light", "desc": "Igniting something to produce fire or illumination.", "type": "leaf" },
+                    { "name": "wear", "desc": "Having clothing, accessories, or equipment attached to the body.", "type": "leaf" }
+                ]
+            },
+            {
+                "name": "Positioning & Direction",
+                "desc": "Sitting, moving on water, or changing direction.",
+                "type": "cluster",
+                "children": [
+                    { "name": "sail", "desc": "Traveling on water in a vessel powered by wind/sails.", "type": "leaf" },
+                    { "name": "sit_on", "desc": "Resting the body's weight on the buttocks upon a specific object.", "type": "leaf" },
+                    { "name": "turn", "desc": "Rotating the body or an object to change its facing direction.", "type": "leaf" }
+                ]
+            },
+            {
+                "name": "Table-Based Activities",
+                "desc": "Actions occurring at a table or dining setting.",
+                "type": "cluster",
+                "children": [
+                    { "name": "eat_at", "desc": "Consuming food while seated specifically at a table or dining setting.", "type": "leaf" },
+                    { "name": "sit_at", "desc": "Occupying a seat at a table, potentially for work or waiting, not necessarily eating.", "type": "leaf" }
+                ]
+            },
+            {
+                "name": "Comm. & Device Interaction",
+                "desc": "Interacting with devices or specific hand motions.",
+                "type": "cluster",
+                "children": [
+                    { "name": "straddle", "desc": "Sitting or standing with one leg on either side of an object.", "type": "leaf" },
+                    { "name": "talk_on", "desc": "Speaking verbally into a telephone or communication device.", "type": "leaf" },
+                    { "name": "text_on", "desc": "Typing written messages on a mobile device interface.", "type": "leaf" },
+                    { "name": "toast", "desc": "Raising a glass socially to honor a person or event.", "type": "leaf" },
+                    { "name": "zip", "desc": "Fastening or unfastening a zipper on clothing or a bag.", "type": "leaf" }
+                ]
+            },
+            {
+                "name": "Operation & Logistics",
+                "desc": "Handling machines, spaces, or containers.",
+                "type": "cluster",
+                "children": [
+                    { "name": "no_interaction", "desc": "Being present in a scene without actively engaging with objects.", "type": "leaf" },
+                    { "name": "open", "desc": "Moving a barrier (like a door or lid) to allow access or view.", "type": "leaf" },
+                    { "name": "operate", "desc": "Controlling the internal functions of a machine or complex device.", "type": "leaf" },
+                    { "name": "pack", "desc": "Placing items into a container or luggage for storage or transport.", "type": "leaf" },
+                    { "name": "park", "desc": "Maneuvering a vehicle into a spot and leaving it stationary.", "type": "leaf" }
+                ]
+            },
+            {
+                "name": "Dynamic Body Movements",
+                "desc": "Active physical motions involving air or skill.",
+                "type": "cluster",
+                "children": [
+                    { "name": "flip", "desc": "Turning an object or one's body over quickly, often in the air.", "type": "leaf" },
+                    { "name": "jump", "desc": "Propelling the entire body off the ground using leg power.", "type": "leaf" },
+                    { "name": "train", "desc": "Engaging in structured exercise or practice to improve skills.", "type": "leaf" }
+                ]
+            },
+            {
+                "name": "Surface Interaction (Feet)",
+                "desc": "Specific actions performed while standing.",
+                "type": "cluster",
+                "children": [
+                    { "name": "grind", "desc": "Sliding along a rail/edge (skateboarding) or crushing material.", "type": "leaf" },
+                    { "name": "stand_on", "desc": "Maintaining an upright posture supported by a specific surface.", "type": "leaf" }
+                ]
+            },
+            {
+                "name": "Forceful Tool Manipulation",
+                "desc": "Using tools or objects with impact or aggression.",
+                "type": "cluster",
+                "children": [
+                    { "name": "break", "desc": "Applying force to separate an object into pieces or render it non-functional.", "type": "leaf" },
+                    { "name": "stick", "desc": "Inserting a pointed object into something or attaching it to a surface.", "type": "leaf" },
+                    { "name": "swing", "desc": "Moving a held object (like a bat) in a wide, arcing motion.", "type": "leaf" },
+                    { "name": "wield", "desc": "Holding and displaying a weapon or tool, ready for use.", "type": "leaf" }
+                ]
+            },
+            {
+                "name": "Visual & Creative",
+                "desc": "Focusing on detail or applying color.",
+                "type": "cluster",
+                "children": [
+                    { "name": "inspect", "desc": "Examining an object closely to check for details or defects.", "type": "leaf" },
+                    { "name": "paint", "desc": "Applying color, pigment, or finish to a surface using a brush or spray.", "type": "leaf" }
+                ]
+            },
+            {
+                "name": "Penetration & Sensory",
+                "desc": "Actions involving piercing, squeezing, or sensing.",
+                "type": "cluster",
+                "children": [
+                    { "name": "shear", "desc": "Cutting the wool off a sheep or cutting with large shears.", "type": "leaf" },
+                    { "name": "smell", "desc": "Inhaling through the nose to perceive an odor.", "type": "leaf" },
+                    { "name": "squeeze", "desc": "Compressing an object firmly with the hand(s).", "type": "leaf" },
+                    { "name": "stab", "desc": "Thrusting a pointed weapon or object forcefully into a target.", "type": "leaf" },
+                    { "name": "stand_under", "desc": "Positioning the body vertically directly beneath an overhanging object.", "type": "leaf" }
+                ]
+            },
+            {
+                "name": "Manual Collection",
+                "desc": "Gathering, removing, or applying force.",
+                "type": "cluster",
+                "children": [
+                    { "name": "peel", "desc": "Removing the outer skin or layer from a fruit or object.", "type": "leaf" },
+                    { "name": "pick", "desc": "Selecting and harvesting a specific item (like a flower) from a group.", "type": "leaf" },
+                    { "name": "pick_up", "desc": "The action of lifting an object from a lower surface to a held position.", "type": "leaf" },
+                    { "name": "push", "desc": "Applying force to move an object away from the body.", "type": "leaf" },
+                    { "name": "run", "desc": "Moving rapidly on foot with moments where both feet are off the ground.", "type": "leaf" }
+                ]
+            },
+            {
+                "name": "Projectile Manipulation",
+                "desc": "Throwing, catching, or rotating objects.",
+                "type": "cluster",
+                "children": [
+                    { "name": "block", "desc": "Physically obstructing the path of a person or moving object.", "type": "leaf" },
+                    { "name": "catch", "desc": "Intercepting and seizing a moving object with the hands.", "type": "leaf" },
+                    { "name": "spin", "desc": "Causing an object to rotate rapidly around its axis.", "type": "leaf" },
+                    { "name": "throw", "desc": "Propelling an object through the air using arm force.", "type": "leaf" }
+                ]
+            },
+            {
+                "name": "Obs. & Control (Living)",
+                "desc": "Interacting with animals or people intentionally.",
+                "type": "cluster",
+                "children": [
+                    { "name": "chase", "desc": "Running after someone or something with the intent to catch them.", "type": "leaf" },
+                    { "name": "control", "desc": "Directing the actions or behavior of a person, animal, or system.", "type": "leaf" },
+                    { "name": "feed", "desc": "Providing food to a person or animal.", "type": "leaf" },
+                    { "name": "hunt", "desc": "Searching for and pursuing wildlife for capture or food.", "type": "leaf" },
+                    { "name": "watch", "desc": "Observing a subject or event continuously and attentively.", "type": "leaf" }
+                ]
+            },
+            {
+                "name": "Tool-Assisted Process",
+                "desc": "Using tools to modify or consume.",
+                "type": "cluster",
+                "children": [
+                    { "name": "assemble", "desc": "Fitting together separate parts to construct a whole object.", "type": "leaf" },
+                    { "name": "brush_with", "desc": "Using a brush tool to clean, groom, or apply a substance.", "type": "leaf" },
+                    { "name": "cut_with", "desc": "Using a sharp tool (like a knife) to sever or divide an object.", "type": "leaf" },
+                    { "name": "dry", "desc": "Removing moisture from a surface, often with a towel or dryer.", "type": "leaf" },
+                    { "name": "eat", "desc": "Putting food into the mouth, chewing, and swallowing.", "type": "leaf" }
+                ]
+            },
+            {
+                "name": "Locomotion & Guiding",
+                "desc": "Walking or guiding animals.",
+                "type": "cluster",
+                "children": [
+                    { "name": "herd", "desc": "Guiding a group of animals to move together in a specific direction.", "type": "leaf" },
+                    { "name": "walk", "desc": "Moving on foot at a moderate pace, always keeping one foot on the ground.", "type": "leaf" }
+                ]
+            },
+            {
+                "name": "Information Processing",
+                "desc": "Interacting with text or data.",
+                "type": "cluster",
+                "children": [
+                    { "name": "read", "desc": "Visually scanning and comprehending written text or symbols.", "type": "leaf" },
+                    { "name": "type_on", "desc": "Inputting text into a device by pressing keys.", "type": "leaf" }
+                ]
+            },
+            {
+                "name": "Oral & Lifting",
+                "desc": "Mouth-based interactions or raising objects.",
+                "type": "cluster",
+                "children": [
+                    { "name": "kiss", "desc": "Touching something or someone with the lips to express affection.", "type": "leaf" },
+                    { "name": "lasso", "desc": "Catching an animal or object by throwing a looped rope around it.", "type": "leaf" },
+                    { "name": "launch", "desc": "Setting a vessel into water or propelling an object into the air.", "type": "leaf" },
+                    { "name": "lick", "desc": "Passing the tongue over a surface to taste or clean it.", "type": "leaf" },
+                    { "name": "lift", "desc": "Raising an object from a lower position to a higher one.", "type": "leaf" }
+                ]
+            },
+            {
+                "name": "Traction & Flight",
+                "desc": "Pulling force or aerial movement.",
+                "type": "cluster",
+                "children": [
+                    { "name": "fly", "desc": "Traveling through the air, either operating an aircraft or as a passenger.", "type": "leaf" },
+                    { "name": "pull", "desc": "Exerting force to draw something towards oneself.", "type": "leaf" }
+                ]
+            },
+            {
+                "name": "Affectionate/Irritating",
+                "desc": "Stroking or scraping skin/fur.",
+                "type": "cluster",
+                "children": [
+                    { "name": "pet", "desc": "Gentle stroking of an animal to show affection.", "type": "leaf" },
+                    { "name": "scratch", "desc": "Rubbing a surface with nails/claws to relieve itching or damage it.", "type": "leaf" }
+                ]
+            },
+            {
+                "name": "Transitioning In/Out",
+                "desc": "Entering, leaving, or filling a space.",
+                "type": "cluster",
+                "children": [
+                    { "name": "board", "desc": "The act of entering a vehicle, ship, or aircraft.", "type": "leaf" },
+                    { "name": "exit", "desc": "The act of leaving a place or stepping out of a vehicle.", "type": "leaf" },
+                    { "name": "load", "desc": "Putting goods or items into a vehicle or container.", "type": "leaf" }
+                ]
+            },
+            {
+                "name": "Liquid Handling",
+                "desc": "Consuming or transferring liquids.",
+                "type": "cluster",
+                "children": [
+                    { "name": "drink_with", "desc": "Consuming liquid using a specific aid like a straw or cup.", "type": "leaf" },
+                    { "name": "pour", "desc": "Causing liquid to flow from a container in a steady stream.", "type": "leaf" },
+                    { "name": "sip", "desc": "Drinking a very small amount of liquid at a time.", "type": "leaf" }
+                ]
+            },
+            {
+                "name": "Sports Ball Actions",
+                "desc": "Specific moves in ball games.",
+                "type": "cluster",
+                "children": [
+                    { "name": "dribble", "desc": "Controlling a ball by bouncing it (basketball) or moving it with feet (soccer).", "type": "leaf" },
+                    { "name": "hit", "desc": "Striking a ball forcibly with a bat, racket, or hand.", "type": "leaf" },
+                    { "name": "kick", "desc": "Striking an object, usually a ball, with the foot.", "type": "leaf" },
+                    { "name": "serve", "desc": "Performing the opening shot to start a point in games like tennis.", "type": "leaf" }
+                ]
+            },
+            {
+                "name": "Cleaning w/ Water",
+                "desc": "Using water to clean.",
+                "type": "cluster",
+                "children": [
+                    { "name": "hose", "desc": "Spraying water forcefully over something using a hosepipe.", "type": "leaf" },
+                    { "name": "wash", "desc": "Cleaning an object or body part using water and cleaning agents.", "type": "leaf" }
+                ]
+            },
+            {
+                "name": "Maintenance",
+                "desc": "Fixing, arranging, or cleaning systems.",
+                "type": "cluster",
+                "children": [
+                    { "name": "clean", "desc": "Removing dirt, dust, or stains from a surface.", "type": "leaf" },
+                    { "name": "flush", "desc": "Cleaning or emptying a toilet or pipe with a rush of water.", "type": "leaf" },
+                    { "name": "repair", "desc": "Restoring a broken or damaged object to working condition.", "type": "leaf" },
+                    { "name": "set", "desc": "Placing or arranging objects (like a table) in a specific configuration.", "type": "leaf" },
+                    { "name": "tie", "desc": "Fastening a cord or rope by forming a knot.", "type": "leaf" }
+                ]
+            },
+            {
+                "name": "Food Prep & Sliding",
+                "desc": "Cooking or sliding.",
+                "type": "cluster",
+                "children": [
+                    { "name": "cook", "desc": "Preparing food by using heat (boiling, baking, frying).", "type": "leaf" },
+                    { "name": "cut", "desc": "Dividing something into pieces with a sharp edge.", "type": "leaf" },
+                    { "name": "make", "desc": "Creating or constructing something (often food) from ingredients.", "type": "leaf" },
+                    { "name": "slide", "desc": "Moving smoothly along a surface while maintaining contact.", "type": "leaf" }
+                ]
+            },
+            // Singleton Clusters (Directly attached to Root, no intermediate node)
+            { "name": "direct", "desc": "Giving official instructions to guide traffic or performers.", "type": "leaf" },
+            { "name": "check", "desc": "Looking at something to verify its condition or correctness.", "type": "leaf" },
+            { "name": "pay", "desc": "Giving money in exchange for goods or services.", "type": "leaf" },
+            { "name": "blow", "desc": "Expelling air forcefully from the mouth.", "type": "leaf" },
+            { "name": "adjust", "desc": "Making slight alterations to something to improve its fit or function.", "type": "leaf" },
+            { "name": "buy", "desc": "The act of acquiring an item by paying for it.", "type": "leaf" },
+            { "name": "greet", "desc": "Acknowledging someone's arrival with words or gestures.", "type": "leaf" },
+            { "name": "install", "desc": "Setting up equipment or software so it is ready to be used.", "type": "leaf" },
+            { "name": "lose", "desc": "The state of misplacing an item or failing to win.", "type": "leaf" },
+            { "name": "milk", "desc": "Drawing milk from the udder of an animal (cow/goat).", "type": "leaf" },
+            { "name": "move", "desc": "Changing physical location or position generally.", "type": "leaf" },
+            { "name": "point", "desc": "Extending a finger to indicate a specific direction or object.", "type": "leaf" },
+            { "name": "release", "desc": "Letting go of something that was held or confined.", "type": "leaf" },
+            { "name": "sign", "desc": "Using sign language to communicate or writing a signature.", "type": "leaf" },
+            { "name": "stir", "desc": "Mixing a substance in a circular motion with a utensil.", "type": "leaf" },
+            { "name": "stop_at", "desc": "Coming to a complete halt at a specific location or marker.", "type": "leaf" },
+            { "name": "tag", "desc": "Touching a player in a game or attaching a label to an item.", "type": "leaf" },
+            { "name": "teach", "desc": "Imparting knowledge or skills to a student.", "type": "leaf" },
+            { "name": "wave", "desc": "Moving the hand back and forth as a signal of greeting or farewell.", "type": "leaf" }
+        ]
+    };
 
-    <div class="section">
-        <div class="section-title">SD2.1 10 Results at 0 and 2000 steps</div>
-        <div class="gallery-2">
-            <img src="sd21_768_0step/0_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image 0">
-            <img src="sd21_768/0_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-        </div>
-        <div class="artistic-text">A close up of a small rabbit wearing a hat and scarf</div>
-        
-        <div class="gallery-2">
-            <img src="sd21_768_0step/1_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image 0">
-            <img src="sd21_768/1_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-        </div>
-        <div class="artistic-text">A stuffed animal with a flower crown on its head</div>
-        
-        <div class="gallery-2">
-            <img src="sd21_768_0step/2_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image 0">
-            <img src="sd21_768/2_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-        </div>
-        <div class="artistic-text">A cartoon chicken with a hat and sunglasses on</div>
-        
-        <div class="gallery-2">
-            <img src="sd21_768_0step/3_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image 0">
-            <img src="sd21_768/3_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-        </div>
-        <div class="artistic-text">A cartoon character with a gun and a jacket on</div>
-        
-        <div class="gallery-2">
-            <img src="sd21_768_0step/4_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image 0">
-            <img src="sd21_768/4_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-        </div>
-        <div class="artistic-text">A small dollhouse with a bed and a desk</div>
-        
-        <div class="gallery-2">
-            <img src="sd21_768_0step/5_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image 0">
-            <img src="sd21_768/5_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-        </div>
-        <div class="artistic-text">A cartoon dog with a backpack and a megaphone</div>
-        
-        <div class="gallery-2">
-            <img src="sd21_768_0step/6_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image 0">
-            <img src="sd21_768/6_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-        </div>
-        <div class="artistic-text">A trowel with a handle on a yellow background</div>
-        
-        <div class="gallery-2">
-            <img src="sd21_768_0step/7_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image 0">
-            <img src="sd21_768/7_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-        </div>
-        <div class="artistic-text">A sheep with very big horns</div>
-        
-        <div class="gallery-2">
-            <img src="sd21_768_0step/8_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image 0">
-            <img src="sd21_768/8_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-        </div>
-        <div class="artistic-text">A small toy of a boy with a tie and a suit</div>
-        
-        <div class="gallery-2">
-            <img src="sd21_768_0step/9_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image 0">
-            <img src="sd21_768/9_0_0_probe_0_[768_768_3].jpg" alt="SD21 Image">
-        </div>
-        <div class="artistic-text">A pig with a backpack on its back</div>
-    </div>
+    // --- 2. Chart Setup ---
+    
+    // Increased height significantly to create more vertical space for nodes
+    const margin = {top: 20, right: 300, bottom: 20, left: 100};
+    const width = 1400 - margin.left - margin.right;
+    const height = 3200; // Large height for spacing
+
+    const svg = d3.select("#tree-container").append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    let i = 0, duration = 750, root;
+
+    const treemap = d3.tree().size([height, width]);
+
+    root = d3.hierarchy(rawData, function(d) { return d.children; });
+    root.x0 = height / 2;
+    root.y0 = 0;
+
+    update(root);
+
+    function update(source) {
+        const treeData = treemap(root);
+        const nodes = treeData.descendants(),
+              links = treeData.descendants().slice(1);
+
+        // Fixed Horizontal depth spacing
+        nodes.forEach(function(d){ 
+            d.y = d.depth * 380; // Wider gap for text
+        });
+
+        // ****************** Nodes section ******************
+
+        const node = svg.selectAll('g.node')
+            .data(nodes, function(d) { return d.id || (d.id = ++i); });
+
+        const nodeEnter = node.enter().append('g')
+            .attr('class', 'node')
+            .attr("transform", function(d) {
+                return "translate(" + source.y0 + "," + source.x0 + ")";
+            })
+            .on("mouseover", function(event, d) {
+                if(d.data.type === 'root') return;
+
+                const tooltip = d3.select("#tooltip");
+                tooltip.transition().duration(200).style("opacity", .95);
+                
+                let content = "";
+                if (d.data.type === "cluster") {
+                    content = `<strong>Category: ${d.data.name}</strong>${d.data.desc}`;
+                } else {
+                     // Leaf (Verb)
+                     content = `<strong>Verb: ${d.data.name}</strong>${d.data.desc}`;
+                }
+
+                tooltip.html(content)
+                    .style("left", (event.pageX + 20) + "px")
+                    .style("top", (event.pageY - 28) + "px");
+            })
+            .on("mouseout", function(d) {
+                d3.select("#tooltip").transition().duration(500).style("opacity", 0);
+            });
+
+        // Add Circle
+        nodeEnter.append('circle')
+            .attr('class', 'node')
+            .attr('r', 1e-6)
+            .style("fill", function(d) {
+                if (d.data.type === 'root') return "#333";
+                if (d.data.type === 'cluster') return "#4A90E2"; // Blue for Categories
+                return "#ff9f43"; // Orange for Verbs (Direct or Nested)
+            })
+            .style("stroke", function(d) {
+                 if (d.data.type === 'cluster') return "#2e70bc";
+                 if (d.data.type === 'root') return "#000";
+                 return "#e58e26";
+            });
+
+        // Add Labels
+        nodeEnter.append('text')
+            .attr("dy", ".35em")
+            .attr("x", function(d) {
+                // If it has children, text to left. If leaf, text to right.
+                return (d.children || d._children) ? -13 : 13;
+            })
+            .attr("text-anchor", function(d) {
+                return (d.children || d._children) ? "end" : "start";
+            })
+            .text(function(d) { return d.data.name; });
+
+        // UPDATE
+        const nodeUpdate = node.merge(nodeEnter);
+
+        nodeUpdate.transition()
+            .duration(duration)
+            .attr("transform", function(d) { 
+                return "translate(" + d.y + "," + d.x + ")";
+            });
+
+        nodeUpdate.select('circle.node')
+            .attr('r', 7) // Slightly larger dots
+            .style("fill", function(d) {
+                if (d.data.type === 'root') return "#333";
+                if (d.data.type === 'cluster') return "#4A90E2"; 
+                return "#ff9f43"; 
+            });
+
+        // ****************** Links section ******************
+
+        const link = svg.selectAll('path.link')
+            .data(links, function(d) { return d.id; });
+
+        const linkEnter = link.enter().insert('path', "g")
+            .attr("class", "link")
+            .attr('d', function(d){
+                const o = {x: source.x0, y: source.y0}
+                return diagonal(o, o)
+            });
+
+        const linkUpdate = link.merge(linkEnter);
+
+        linkUpdate.transition()
+            .duration(duration)
+            .attr('d', function(d){ return diagonal(d, d.parent) });
+
+        const linkExit = link.exit().transition()
+            .duration(duration)
+            .attr('d', function(d) {
+                const o = {x: source.x, y: source.y}
+                return diagonal(o, o)
+            })
+            .remove();
+
+        nodes.forEach(function(d){
+            d.x0 = d.x;
+            d.y0 = d.y;
+        });
+
+        function diagonal(s, d) {
+            return `M ${s.y} ${s.x}
+                    C ${(s.y + d.y) / 2} ${s.x},
+                      ${(s.y + d.y) / 2} ${d.x},
+                      ${d.y} ${d.x}`;
+        }
+    }
+</script>
 </body>
 </html>
