@@ -1,0 +1,16 @@
+{
+  "id": "id068",
+  "source_image": "test_50_mixed/id068/image.png",
+  "source_prompt_file": "test_50_mixed/id068/prompt4.txt",
+  "image_model": "gpt-image-2",
+  "text_model": "gpt-4.1-mini",
+  "size": "1024x1536",
+  "quality": "medium",
+  "input_fidelity": null,
+  "chinese_task": "图片是人物的ID图，文本是视频的caption描述，保持ID图整个图像结构不变但是风格变为铅笔画风格即整个脸部不变化，生成符合文本的合理的人物的全身图，注意参考文本里的服饰和角色身份，生成的人体身材和比例要自然、正常、符合人体解剖结构",
+  "english_task_reference": "The image is a person's ID reference image, and the text is the caption description of a video. Keep the entire structure and identity of the ID image unchanged, but convert the style into a pencil sketch. Do not change the face at all. Generate a reasonable full-body image of the person that matches the text. Pay close attention to the clothing and role identity described in the text. Ensure the generated full-body figure has natural, normal, anatomically plausible body shape and proportions.",
+  "apparent_presentation": "feminine",
+  "pronoun_changed": false,
+  "created_at": "2026-05-09 23:10:52",
+  "output_image": "test_50_mixed_gpt_image2_pencil/id068/pencil_full_body.png"
+}

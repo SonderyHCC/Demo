@@ -1,0 +1,3 @@
+The image is a person's ID photo. The instruction is to keep the entire structure of the ID photo unchanged but change the style to pencil sketch style, meaning the entire face remains the same without alterations. Generate a reasonable full-body image of the person that matches the caption text. Pay attention to the clothing and character identity referenced in the text. The generated body shape and proportions should be natural, normal, and anatomically correct.
+
+The waiter, in a black uniform with a bow tie, moved quickly between tables, delivering meals with a friendly smile and steady hands, the soft clink of silverware and the murmur of conversations filling the air of the elegant restaurant.

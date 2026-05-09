@@ -1,0 +1,3 @@
+The image is an ID picture of a person. The text is a caption describing a video. Maintain the entire structure of the ID image unchanged but change the style to a pencil sketch style, meaning the entire face remains the same without changes. Generate a reasonable full-body image of the person that fits the text. Pay attention to the clothing and character identity referenced in the text. The generated body shape and proportions must be natural, normal, and conform to human anatomical structure.
+
+The ballerina, in a tutu and pointe shoes, spun rapidly on one foot, her other leg extended gracefully as she leapt into the air, the stage lights blinding her eyes while the music swelled in crescendo, creating an almost dreamlike atmosphere in the theater.

@@ -1,0 +1,3 @@
+The image is an ID reference image of a person, and the text is the video's caption description. Keep the entire image structure of the ID image unchanged, but change the style to a pencil drawing style; that is, keep the entire face unchanged. Generate a reasonable full-body image of the person that matches the text. Pay attention to the clothing and character identity in the reference text. The generated body shape and proportions should be natural, normal, and anatomically correct.
+
+The gymnast, dressed in a colorful leotard, twirled in the air before landing gracefully on the mat at the Olympic arena, the stadium around him filled with cheering fans, the bright lights casting sharp shadows over the gleaming floor as the sound of clapping echoed in the arena.

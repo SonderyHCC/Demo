@@ -1,0 +1,3 @@
+The image is an ID photo of a person. The text is a caption describing a video. Keep the entire structure of the ID photo unchanged, but change the style to pencil drawing style, meaning the entire face does not change. Generate a reasonable full-body image of the person that matches the text, paying attention to the clothing and character identity referenced in the text. The generated body shape and proportions must be natural, normal, and consistent with human anatomy.
+
+The cyclist, in bright gear and helmet, pedaled hard, his muscles straining as he climbed the steep mountain path, the cool air biting at his face, the sound of his breath heavy as he pushed himself further up the winding trail.
