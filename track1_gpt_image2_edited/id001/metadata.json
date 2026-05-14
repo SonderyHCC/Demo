@@ -1,0 +1,11 @@
+{
+  "id": "id001",
+  "source_img": "test_track1/final/images/id001.webp",
+  "source_image": "IPVG2026-Test-Track1/images/id001.webp",
+  "image_model": "gpt-image-2",
+  "size": "auto",
+  "quality": "medium",
+  "input_fidelity": null,
+  "created_at": "2026-05-15 06:00:14",
+  "output_image": "track1_gpt_image2_edited/id001/illustration_id.png"
+}
