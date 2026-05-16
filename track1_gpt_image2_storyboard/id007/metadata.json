@@ -1,0 +1,19 @@
+{
+  "id": "id007",
+  "source_img": "test_track1/final/images/id007.webp",
+  "source_image": "IPVG2026-Test-Track1/images/id007.webp",
+  "image_model": "gpt-image-2",
+  "text_model": "gpt-4.1-mini",
+  "panel_count": 3,
+  "size": "auto",
+  "quality": "medium",
+  "input_fidelity": null,
+  "created_at": "2026-05-16 11:52:03",
+  "storyboard_file": "track1_gpt_image2_storyboard/id007/storyboard.json",
+  "generated_images": [
+    "track1_gpt_image2_storyboard/id007/panel_00_character.png",
+    "track1_gpt_image2_storyboard/id007/panel_01_focused_woman_hacking.png",
+    "track1_gpt_image2_storyboard/id007/panel_02_woman_freezes_and_lifts_chin.png",
+    "track1_gpt_image2_storyboard/id007/panel_03_camera_push_in_with_determined_gaze.png"
+  ]
+}

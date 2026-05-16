@@ -1,0 +1,23 @@
+{
+  "caption_summary": "A middle-aged man notices a diamond ring displayed in a jewelry store and scratches his temple thoughtfully.",
+  "panels": [
+    {
+      "description": "Medium close-up of a middle-aged Caucasian man with a light brown beard wearing a red collared shirt, looking slightly to his right with a curious gaze, standing inside a jewelry store with bright, soft lighting.",
+      "panel": 1,
+      "slug": "man_notices_diamond_ring",
+      "stage": "opening"
+    },
+    {
+      "description": "Closer side view of the man turning his head slightly to scratch an itch on his right temple with his right hand, his gaze shifting from the viewer toward the sparkling diamond ring behind the glass counter, reflections visible on the glass surface.",
+      "panel": 2,
+      "slug": "man_scratches_temple",
+      "stage": "middle"
+    },
+    {
+      "description": "Close-up of the man's thoughtful face, eyes intently focused on the glittering diamond ring behind the glass jewelry counter, light reflecting off the jewels, his expression showing contemplation and subtle desire.",
+      "panel": 3,
+      "slug": "man_contemplates_ring",
+      "stage": "final"
+    }
+  ]
+}

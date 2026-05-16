@@ -1,0 +1,19 @@
+{
+  "id": "id002",
+  "source_img": "test_track1/final/images/id002.webp",
+  "source_image": "IPVG2026-Test-Track1/images/id002.webp",
+  "image_model": "gpt-image-2",
+  "text_model": "gpt-4.1-mini",
+  "panel_count": 3,
+  "size": "auto",
+  "quality": "medium",
+  "input_fidelity": null,
+  "created_at": "2026-05-16 10:55:46",
+  "storyboard_file": "track1_gpt_image2_storyboard/id002/storyboard.json",
+  "generated_images": [
+    "track1_gpt_image2_storyboard/id002/panel_00_character.png",
+    "track1_gpt_image2_storyboard/id002/panel_01_woman_spots_butterfly.png",
+    "track1_gpt_image2_storyboard/id002/panel_02_butterfly_takes_flight.png",
+    "track1_gpt_image2_storyboard/id002/panel_03_reaching_for_fleeing_butterfly.png"
+  ]
+}

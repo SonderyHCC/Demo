@@ -1,0 +1,19 @@
+{
+  "id": "id020",
+  "source_img": "test_track1/final/images/id020.webp",
+  "source_image": "IPVG2026-Test-Track1/images/id020.webp",
+  "image_model": "gpt-image-2",
+  "text_model": "gpt-4.1-mini",
+  "panel_count": 3,
+  "size": "auto",
+  "quality": "medium",
+  "input_fidelity": null,
+  "created_at": "2026-05-16 14:22:02",
+  "storyboard_file": "track1_gpt_image2_storyboard/id020/storyboard.json",
+  "generated_images": [
+    "track1_gpt_image2_storyboard/id020/panel_00_character.png",
+    "track1_gpt_image2_storyboard/id020/panel_01_nervous_gaze_on_magic_carpet.png",
+    "track1_gpt_image2_storyboard/id020/panel_02_startled_horizon_scan.png",
+    "track1_gpt_image2_storyboard/id020/panel_03_dramatic_blushing_closeup.png"
+  ]
+}

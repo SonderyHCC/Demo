@@ -1,0 +1,23 @@
+{
+  "caption_summary": "A man inside a cryo-pod on a snowy peak watches a blinking sensor, then faces forward as frost covers the glass.",
+  "panels": [
+    {
+      "panel": 1,
+      "slug": "intense_gaze_at_sensor",
+      "stage": "opening",
+      "description": "Close-up on a 30-year-old Middle Eastern man with thick beard and short hair wearing a green shirt, seated inside a futuristic transparent cryo-pod, staring intently with wide eyes at a blinking red sensor panel to his side; tight macro framing focused on his eyes and part of the sensor, soft cool lighting highlighting his anticipation."
+    },
+    {
+      "panel": 2,
+      "slug": "pivot_to_viewer",
+      "stage": "middle",
+      "description": "Medium shot inside the cryo-pod showing the man slowly pivoting his head forward to face the camera directly with a stoic expression; his gaze meets the viewer’s directly, ambient cold lighting casts subtle reflections on the pod’s glass, hint of frost starting to form at edges."
+    },
+    {
+      "panel": 3,
+      "slug": "eyes_close_frost_crawl",
+      "stage": "final",
+      "description": "Wide shot showing the man seated calmly as his eyes flutter closed, frost dramatically creeping across the entire cryo-pod’s transparent glass walls; outside the pod, a harsh snowy peak environment is revealed by the camera dollying backward and panning left, wind blowing snow in the cold, bleak landscape."
+    }
+  ]
+}

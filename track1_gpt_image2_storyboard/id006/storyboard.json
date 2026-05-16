@@ -1,0 +1,23 @@
+{
+  "caption_summary": "An older blonde woman carves driftwood in a dim Victorian haunted house, then notices a mysterious shadow, triggering a camera move revealing a creepy corridor.",
+  "panels": [
+    {
+      "panel": 1,
+      "slug": "focused_carving_driftwood",
+      "stage": "opening",
+      "description": "Medium close-up of an older Caucasian woman with short blonde hair intensely carving a piece of driftwood using a sharp chisel. She is seated inside a dimly lit Victorian room with cobwebs hanging around. The lighting is soft and moody, illuminating her focused face and blue eyes looking down at her work."
+    },
+    {
+      "panel": 2,
+      "slug": "startled_gaze_to_shadow",
+      "stage": "turning_point",
+      "description": "Close-up of the woman’s face as she abruptly turns her head to the right, her piercing blue eyes sharply shifting focus from the chisel to a mysterious shadowy corner. Her expression is startled, eyebrows raised slightly in surprise. The dim lighting casts dramatic shadows across her face."
+    },
+    {
+      "panel": 3,
+      "slug": "revealing_candlelit_corridor",
+      "stage": "final",
+      "description": "Wide shot slowly pushing in on the woman’s startled face while panning right to reveal a long candle-lit corridor with creaking floorboards and peeling wallpaper. The hall is draped in cobwebs and has flickering candlelight creating eerie shadows. The atmosphere is tense and haunted."
+    }
+  ]
+}

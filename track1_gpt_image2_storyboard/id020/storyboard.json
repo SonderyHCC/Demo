@@ -1,0 +1,23 @@
+{
+  "caption_summary": "A young man on a magical carpet shifts from nervousness to startled excitement as he looks out over a cloudscape.",
+  "panels": [
+    {
+      "description": "Young Caucasian male with short, tousled light-brown hair and blue eyes sitting cross-legged on a vibrant magic carpet with gold embroidery, floating high above fluffy white cumulus clouds against a deep blue sky; his head tilted down nervously gazing at the weaving rug, soft natural lighting highlighting a reddish flush across his nose and cheeks, medium side-profile framing.",
+      "panel": 1,
+      "slug": "nervous_gaze_on_magic_carpet",
+      "stage": "opening"
+    },
+    {
+      "description": "The same young man abruptly lifts his chin sharply, eyes wide and startled, his blue eyes scanning the distant horizon; camera smoothly orbits to a more frontal angle, capturing the contrast in his expression and intensifying the reddish flush on his face from soft natural light, still seated on the ornate magic carpet above the cloudscape.",
+      "panel": 2,
+      "slug": "startled_horizon_scan",
+      "stage": "turning_point"
+    },
+    {
+      "description": "Close-up frontal shot focusing on the young man's blushing face, wide blue eyes staring into the distance with a mix of flustered excitement and awe, tousled hair slightly ruffled by a gentle breeze; the richly detailed gold patterns of the carpet visible at the frame's bottom, vibrant blue sky and fluffy clouds blurred softly in the background under bright daylight.",
+      "panel": 3,
+      "slug": "dramatic_blushing_closeup",
+      "stage": "final"
+    }
+  ]
+}

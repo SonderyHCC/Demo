@@ -1,0 +1,23 @@
+{
+  "panels": [
+    {
+      "description": "A middle-aged Caucasian man with slicked-back dark hair showing gray at the temples, wearing tortoiseshell glasses, sits alone in a dimly lit dormitory common room with sparse decorations, looking down with a tense posture, trembling visibly.",
+      "panel": 1,
+      "slug": "man_trembling_sitting",
+      "stage": "opening"
+    },
+    {
+      "description": "Close-up of the man's face showing tears streaming down his cheeks, his lips quivering, as he silently sobs, head bowed slightly, illuminated softly from the side, emphasizing his emotional vulnerability.",
+      "panel": 2,
+      "slug": "man_sobbing_closeup",
+      "stage": "middle"
+    },
+    {
+      "description": "The man lifts his head slowly, staring intensely forward with a mix of pain and determination in his eyes, still trembling, framed tightly to capture his raw emotion against the blurred dorm room background.",
+      "panel": 3,
+      "slug": "man_intense_gaze",
+      "stage": "final"
+    }
+  ],
+  "caption_summary": "A middle-aged man trembles and silently sobs in a dormitory common room before lifting his head to stare intensely forward."
+}

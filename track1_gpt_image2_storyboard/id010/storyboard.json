@@ -1,0 +1,23 @@
+{
+  "caption_summary": "A young Black man angrily stamps a passport in a grim underground parking lot, then fiercely glares into the camera amid harsh industrial surroundings.",
+  "panels": [
+    {
+      "panel": 1,
+      "slug": "focused_passport_stamping",
+      "stage": "opening",
+      "description": "Medium close-up of a young Black man in a bright blue athletic shirt, eyes locked downward intently on an inked passport page, aggressively stamping it on a grimy makeshift metal crate in a dimly lit underground parking lot with flickering fluorescent lights casting stark shadows."
+    },
+    {
+      "panel": 2,
+      "slug": "furious_head_whip",
+      "stage": "middle",
+      "description": "Close-up as the man abruptly whips his heavy head upward, his flushed, sweating face contorted in unbridled, terrifying rage; his gaze now piercing straight at the camera lens, sweat glistening under harsh low light."
+    },
+    {
+      "panel": 3,
+      "slug": "dark_industrial_surroundings",
+      "stage": "final",
+      "description": "Wide shot panning slowly left to reveal the vast, shadowy underground parking lot, dirty concrete pillars, and humming, flickering overhead fluorescent lights, framing the man’s fierce glare as he stands amidst the oppressive, grim environment."
+    }
+  ]
+}

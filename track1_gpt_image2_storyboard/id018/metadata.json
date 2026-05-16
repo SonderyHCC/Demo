@@ -1,0 +1,19 @@
+{
+  "id": "id018",
+  "source_img": "test_track1/final/images/id018.webp",
+  "source_image": "IPVG2026-Test-Track1/images/id018.webp",
+  "image_model": "gpt-image-2",
+  "text_model": "gpt-4.1-mini",
+  "panel_count": 3,
+  "size": "auto",
+  "quality": "medium",
+  "input_fidelity": null,
+  "created_at": "2026-05-16 14:05:44",
+  "storyboard_file": "track1_gpt_image2_storyboard/id018/storyboard.json",
+  "generated_images": [
+    "track1_gpt_image2_storyboard/id018/panel_00_character.png",
+    "track1_gpt_image2_storyboard/id018/panel_01_man_reaching_for_grail.png",
+    "track1_gpt_image2_storyboard/id018/panel_02_time_storm_compound_camera_move.png",
+    "track1_gpt_image2_storyboard/id018/panel_03_man_snaps_gaze_to_viewer.png"
+  ]
+}

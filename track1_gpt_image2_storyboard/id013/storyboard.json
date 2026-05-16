@@ -1,0 +1,23 @@
+{
+  "caption_summary": "A middle-aged South Asian man dips a chip into royal icing inside a giant gingerbread house.",
+  "panels": [
+    {
+      "panel": 1,
+      "slug": "man_stands_in_gingerbread_house",
+      "stage": "opening",
+      "description": "Medium shot of a middle-aged South Asian man with short, graying hair standing inside a giant gingerbread house, warm indoor lighting highlighting gingerbread walls decorated with candy."
+    },
+    {
+      "panel": 2,
+      "slug": "man_leans_forward_dipping_chip",
+      "stage": "middle",
+      "description": "Close-up of the man leaning forward slightly, focused gaze on his hands as he holds a crispy chip poised over a glossy pool of white royal icing."
+    },
+    {
+      "panel": 3,
+      "slug": "man_dips_chip_into_icing",
+      "stage": "final",
+      "description": "Tight shot on the man's hands dipping the chip into the thick, shiny royal icing, with soft light reflecting off the icing's surface, conveying a moment of careful action."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "panels": [
+    {
+      "panel": 1,
+      "slug": "focused_coin_counting",
+      "stage": "opening",
+      "description": "medium close-up of a young South Asian man with dark curly hair and round black-rimmed glasses, seated cross-legged on a vibrant ornate magic carpet, twilight sky background; he looks down intensely at a scattering of shiny coins cupped in his hands"
+    },
+    {
+      "panel": 2,
+      "slug": "surprised_gaze_forward",
+      "stage": "middle",
+      "description": "the man suddenly lifts his head, shifting gaze from coins to directly forward into the camera, expression surprised and wide-eyed, glasses reflecting faint light, still seated on magic carpet in twilight"
+    },
+    {
+      "panel": 3,
+      "slug": "pull_back_showing_carpet_city",
+      "stage": "final",
+      "description": "camera pulls back and tilts upward revealing the floating ornate magic carpet fully against a vast twilight sky with distant city lights below, man still seated cross-legged looking forward, emphasizing surreal flight"
+    }
+  ],
+  "caption_summary": "Young man counts coins on a flying magic carpet, then looks up surprised as the camera reveals their surreal journey over a city at twilight."
+}

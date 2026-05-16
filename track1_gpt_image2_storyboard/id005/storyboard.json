@@ -1,0 +1,23 @@
+{
+  "caption_summary": "A young man struggles to sign a receipt while suspended in a hang glider amid a storm, showing escalating fear and dizzying aerial perspective.",
+  "panels": [
+    {
+      "slug": "man_gripping_clipboard_in_hang_glider",
+      "stage": "opening",
+      "description": "Extreme close-up of a young blonde Caucasian man’s wide, dilated eyes filled with shock and terror; his trembling hand tightly grips a clipboard attempting to sign a receipt; harsh natural light highlights sweat on his forehead and stubble; background blurred to emphasize intense gaze.",
+      "panel": 1
+    },
+    {
+      "slug": "man_head_turns_toward_stormy_abyss",
+      "stage": "middle",
+      "description": "Medium shot revealing the man suspended within the chrome tubing of the hang glider; his head whips sharply to the right against a stormy, swirling dark cloudscape; his gaze shifts anxiously between the receipt in his hand and the vast terrifying abyss below; tense body posture with grip tightening on the clipboard.",
+      "panel": 2
+    },
+    {
+      "slug": "wide_spiral_reveal_of_glider_storm",
+      "stage": "final",
+      "description": "Wide shot from a spiraling, rolling crane camera angle rapidly dollying out to show the man as a tiny speck on the hang glider framed against immense, swirling storm clouds; lighting dramatic with harsh natural highlights; the man stares straight ahead in sheer terror, emphasizing scale and vulnerability.",
+      "panel": 3
+    }
+  ]
+}

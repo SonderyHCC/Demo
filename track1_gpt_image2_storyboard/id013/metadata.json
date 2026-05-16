@@ -1,0 +1,19 @@
+{
+  "id": "id013",
+  "source_img": "test_track1/final/images/id013.webp",
+  "source_image": "IPVG2026-Test-Track1/images/id013.webp",
+  "image_model": "gpt-image-2",
+  "text_model": "gpt-4.1-mini",
+  "panel_count": 3,
+  "size": "auto",
+  "quality": "medium",
+  "input_fidelity": null,
+  "created_at": "2026-05-16 13:08:23",
+  "storyboard_file": "track1_gpt_image2_storyboard/id013/storyboard.json",
+  "generated_images": [
+    "track1_gpt_image2_storyboard/id013/panel_00_character.png",
+    "track1_gpt_image2_storyboard/id013/panel_01_man_stands_in_gingerbread_house.png",
+    "track1_gpt_image2_storyboard/id013/panel_02_man_leans_forward_dipping_chip.png",
+    "track1_gpt_image2_storyboard/id013/panel_03_man_dips_chip_into_icing.png"
+  ]
+}

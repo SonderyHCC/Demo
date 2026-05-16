@@ -1,0 +1,23 @@
+{
+  "caption_summary": "A rugged man swings a hockey stick at a black hole's edge, blending casual sport with cosmic destruction.",
+  "panels": [
+    {
+      "description": "Wide shot of rugged middle-aged man with slicked-back greying hair and dark aviator sunglasses, gripping a hockey stick mid-swing at the shimmering edge of a black hole; cosmic swirling accretion disk glowing beneath his boots, cinematic lighting illuminating sweat on his brow, ambient cosmic glow casting surreal light.",
+      "panel": 1,
+      "slug": "man_swinging_hockey_stick_black_hole",
+      "stage": "opening"
+    },
+    {
+      "description": "Medium close-up of the man's head snapping from tracking the hockey stick's arc to locking a confident gaze forward; lit cigarette dangling from his stubbled lips, dramatic side lighting highlighting facial textures and sweat, background showing distorted space warping around the black hole's edge.",
+      "panel": 2,
+      "slug": "head_snap_to_gaze_with_cigarette",
+      "stage": "middle"
+    },
+    {
+      "description": "Slow dolly-in camera movement with downward tilt emphasizing the gravity well beneath the man's boots; surreal juxtaposition of casual sport stance against the vast cosmic destruction of the black hole swirling intensely, reflected light dancing on the metallic hockey stick, cinematic shadows enhancing the dramatic tension.",
+      "panel": 3,
+      "slug": "dolly_in_emphasizing_gravity_well",
+      "stage": "final"
+    }
+  ]
+}

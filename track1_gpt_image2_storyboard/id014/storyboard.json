@@ -1,0 +1,23 @@
+{
+  "caption_summary": "A determined woman asserts authority in a busy post office over a disputed parcel delivery.",
+  "panels": [
+    {
+      "slug": "assertive_waiting_with_manifest",
+      "stage": "opening",
+      "description": "Medium shot of a poised, forty-year-old Caucasian woman with dark, wavy hair standing assertively in a busy post office queue, glancing down at a shipping manifest on her smartphone, bright institutional signage behind, blurred waiting customers around.",
+      "panel": 1
+    },
+    {
+      "slug": "locking_gaze_with_clerk",
+      "stage": "turning_point",
+      "description": "Medium close-up of the woman sharply turning her head forward to lock eyes with the clerk, expression shifting from a faint polite smile to determined authority, conveying tension and control.",
+      "panel": 2
+    },
+    {
+      "slug": "intense_closeup_authority",
+      "stage": "final",
+      "description": "Tight close-up of the woman's face as she speaks with intense gaze, strong lighting highlighting her expression of power and command against a softly blurred background, emphasizing the unusual public power dynamic.",
+      "panel": 3
+    }
+  ]
+}

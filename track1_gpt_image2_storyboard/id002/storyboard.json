@@ -1,0 +1,23 @@
+{
+  "caption_summary": "A woman in a vintage classroom watches a butterfly take flight, expressing hope and seriousness.",
+  "panels": [
+    {
+      "slug": "woman_spots_butterfly",
+      "stage": "opening",
+      "description": "Middle-aged Caucasian woman with dark ponytail in a sunlit vintage classroom lined with antique desks, standing and looking down fixedly at a butterfly resting on a surface. Warm sunlight filters in, casting soft shadows.",
+      "panel": 1
+    },
+    {
+      "slug": "butterfly_takes_flight",
+      "stage": "middle",
+      "description": "Close-up on woman's face as her head jerks upward and turns to the right, eyes tracking the butterfly beginning to flap its delicate wings. She leans forward slightly, serious but hopeful expression, warm light illuminating floating dust particles.",
+      "panel": 2
+    },
+    {
+      "slug": "reaching_for_fleeing_butterfly",
+      "stage": "final",
+      "description": "Slow dolly-zoom pushes in on the woman's focused face while panning right to keep her reaching hand and the butterfly mid-flight in frame, set against the sun-dappled vintage classroom ambiance with visible dust motes in the air.",
+      "panel": 3
+    }
+  ]
+}

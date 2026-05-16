@@ -1,0 +1,23 @@
+{
+  "caption_summary": "A man pilots a mech inside a glowing leviathan stomach, reacting to a shadow outside the glass.",
+  "panels": [
+    {
+      "description": "Medium close-up of a serious middle-aged man with dark receding hair and light stubble seated inside a worn, heavy mech cockpit. The dim, claustrophobic interior glows with pulsating violet and green light from organic walls around him. Sweat beads on his forehead as he intensely studies flickering holographic flight data on his dashboard in front of him.",
+      "panel": 1,
+      "slug": "pilot_studying_holograms",
+      "stage": "opening"
+    },
+    {
+      "description": "Close-up on the man's face as his expression tightens with alarm. He violently whips his head to the left, eyes wide and locking onto movement outside the reinforced cockpit glass. Reflected bioluminescent waves shimmer on the glass, hinting at a shadow moving through the acidic churning environment outside the mech.",
+      "panel": 2,
+      "slug": "pilot_notices_shadow",
+      "stage": "middle"
+    },
+    {
+      "description": "Wide shot revealing the vast, organic corridor inside the leviathan’s stomach, the mech suit small against the towering pulsating walls bathed in deep violet and sickly green light. The camera slowly dollies in, tracking the man's head turn towards the shadow outside, emphasizing the menacing scale and alien environment surrounding them.",
+      "panel": 3,
+      "slug": "mech_in_giant_organic_corridor",
+      "stage": "turning_point"
+    }
+  ]
+}

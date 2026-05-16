@@ -1,0 +1,19 @@
+{
+  "id": "id004",
+  "source_img": "test_track1/final/images/id004.webp",
+  "source_image": "IPVG2026-Test-Track1/images/id004.webp",
+  "image_model": "gpt-image-2",
+  "text_model": "gpt-4.1-mini",
+  "panel_count": 3,
+  "size": "auto",
+  "quality": "medium",
+  "input_fidelity": null,
+  "created_at": "2026-05-16 11:20:08",
+  "storyboard_file": "track1_gpt_image2_storyboard/id004/storyboard.json",
+  "generated_images": [
+    "track1_gpt_image2_storyboard/id004/panel_00_character.png",
+    "track1_gpt_image2_storyboard/id004/panel_01_focused_coin_counting.png",
+    "track1_gpt_image2_storyboard/id004/panel_02_surprised_gaze_forward.png",
+    "track1_gpt_image2_storyboard/id004/panel_03_pull_back_showing_carpet_city.png"
+  ]
+}

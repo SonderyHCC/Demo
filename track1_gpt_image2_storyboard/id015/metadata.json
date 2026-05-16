@@ -1,0 +1,19 @@
+{
+  "id": "id015",
+  "source_img": "test_track1/final/images/id015.webp",
+  "source_image": "IPVG2026-Test-Track1/images/id015.webp",
+  "image_model": "gpt-image-2",
+  "text_model": "gpt-4.1-mini",
+  "panel_count": 3,
+  "size": "auto",
+  "quality": "medium",
+  "input_fidelity": null,
+  "created_at": "2026-05-16 13:32:19",
+  "storyboard_file": "track1_gpt_image2_storyboard/id015/storyboard.json",
+  "generated_images": [
+    "track1_gpt_image2_storyboard/id015/panel_00_character.png",
+    "track1_gpt_image2_storyboard/id015/panel_01_pilot_studying_holograms.png",
+    "track1_gpt_image2_storyboard/id015/panel_02_pilot_notices_shadow.png",
+    "track1_gpt_image2_storyboard/id015/panel_03_mech_in_giant_organic_corridor.png"
+  ]
+}

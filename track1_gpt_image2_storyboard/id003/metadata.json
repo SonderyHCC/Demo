@@ -1,0 +1,19 @@
+{
+  "id": "id003",
+  "source_img": "test_track1/final/images/id003.webp",
+  "source_image": "IPVG2026-Test-Track1/images/id003.webp",
+  "image_model": "gpt-image-2",
+  "text_model": "gpt-4.1-mini",
+  "panel_count": 3,
+  "size": "auto",
+  "quality": "medium",
+  "input_fidelity": null,
+  "created_at": "2026-05-16 11:04:29",
+  "storyboard_file": "track1_gpt_image2_storyboard/id003/storyboard.json",
+  "generated_images": [
+    "track1_gpt_image2_storyboard/id003/panel_00_character.png",
+    "track1_gpt_image2_storyboard/id003/panel_01_nervous_start_on_tightrope.png",
+    "track1_gpt_image2_storyboard/id003/panel_02_focused_gaze_through_mist.png",
+    "track1_gpt_image2_storyboard/id003/panel_03_checking_left_stability_with_vertigo_shot.png"
+  ]
+}

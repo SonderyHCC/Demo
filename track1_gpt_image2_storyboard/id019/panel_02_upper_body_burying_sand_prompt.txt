@@ -1,0 +1,3 @@
+Create a hand-drawn cinematic storyboard illustration from the provided character portrait reference image. Render in full color with clean linework, subtle painterly shading, and polished film storyboard concept-art style. Keep the same general character appearance, face shape, hairstyle, age impression, and outfit details from the reference image. Do not make it photorealistic. Do not add text, captions, logos, watermarks, or UI elements. Use the panel description below to design the pose, action, framing, scene, lighting, and emotional beat. 
+
+Panel 2 (middle): Medium shot showing the woman vigorously burying a small human figurine in fine white sand inside a container on a tiled floor; her upper body and hands actively covering the figurine.

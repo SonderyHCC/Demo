@@ -1,0 +1,23 @@
+{
+  "caption_summary": "A man in a navy suit reaches for the glowing Holy Grail amid a chaotic time storm, then abruptly looks at the viewer as the camera closes in.",
+  "panels": [
+    {
+      "panel": 1,
+      "slug": "man_reaching_for_grail",
+      "stage": "opening",
+      "description": "Middle-aged Caucasian man with groomed dark beard and intense brown eyes, dressed in a navy suit, reaching out with one hand to grasp an ornate, glowing ancient cup suspended mid-air; his gaze locked intently on the artifact; chaotic swirling timeline fractures creating a disorienting storm around him; 8k photorealistic detail, cool blue and orange lighting enhancing the mystical atmosphere; camera positioned medium close-up framing the upper body."
+    },
+    {
+      "panel": 2,
+      "slug": "time_storm_compound_camera_move",
+      "stage": "middle",
+      "description": "The camera dollies in tightly and pans right, intensifying the swirling temporal storm engulfing the man; lightning-like crackles and fragmented time visuals warp the background completely behind him; his hand just inches from the glowing cup; his eyes still fixed on the hovering artifact; dramatic shadows and highlights emphasize depth and chaos."
+    },
+    {
+      "panel": 3,
+      "slug": "man_snaps_gaze_to_viewer",
+      "stage": "turning_point",
+      "description": "The man abruptly snaps his head forward, locking his intense brown eyes directly at the viewer with a fierce, determined expression; his hand paused mid-reach near the glowing Holy Grail; the chaotic timeline storm envelops the frame with sharp detail; tight close-up focusing on his face and upper torso, dynamic lighting accentuating his gaze and emotional shift."
+    }
+  ]
+}

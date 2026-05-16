@@ -1,0 +1,23 @@
+{
+  "caption_summary": "A middle-aged man nervously crosses a foggy tightrope bridge at midnight while the camera reveals the peril below.",
+  "panels": [
+    {
+      "panel": 1,
+      "slug": "nervous_start_on_tightrope",
+      "stage": "opening",
+      "description": "Middle-aged Caucasian man with graying wavy hair and thick mustache, wearing a white jacket, balancing tensely on a narrow tightrope over a foggy bridge at night, staring downward intensely at the swaying wire; dim moonlight filters through thick mist, camera low-angle tracking his hesitant steps."
+    },
+    {
+      "panel": 2,
+      "slug": "focused_gaze_through_mist",
+      "stage": "middle",
+      "description": "The man slowly raising his head to gaze forward, piercing through swirling dense fog ahead; his shoulders squared, eyes sharp and determined, slight tension in his tightened grip, ambient blue-black night lighting highlighting the mist’s depth."
+    },
+    {
+      "panel": 3,
+      "slug": "checking_left_stability_with_vertigo_shot",
+      "stage": "turning_point",
+      "description": "Man turning his head sharply to the left, eyes scanning for stability on the narrow wire, slight sweat visible on his brow; camera smoothly tilting upward from his feet to reveal a terrifying vertical drop shrouded in darkness below, capturing his precarious position with dramatic high-contrast shadows."
+    }
+  ]
+}

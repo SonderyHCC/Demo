@@ -1,0 +1,23 @@
+{
+  "caption_summary": "A young Black woman explores an Area 51 hangar, shifting her gaze from a glowing interface to the stars outside a reinforced glass window, captured by a cinematic push-in camera.",
+  "panels": [
+    {
+      "panel": 1,
+      "slug": "woman_gazing_down_at_interface",
+      "stage": "opening",
+      "description": "Young Black woman with short curly hair and round wire-rimmed glasses wearing a mustard-yellow cable-knit sweater and large over-ear headphones stands inside a shadowy industrial hangar, looking downward at a softly glowing interface with a gentle smile, framed in medium close-up with dim, moody lighting."
+    },
+    {
+      "panel": 2,
+      "slug": "woman_lifting_chin_turning_face",
+      "stage": "middle",
+      "description": "Same woman slowly lifting her chin and turning her face upward and to the left towards a tall, reinforced glass observation window, her expression shifting to awe, with a cinematic camera performing a slow push-in and upward tilt, blurred industrial server racks in the background enhancing depth."
+    },
+    {
+      "panel": 3,
+      "slug": "woman_watching_starry_sky",
+      "stage": "final",
+      "description": "Close-up of the woman's face illuminated softly by twinkling stars visible through the large glass window; her eyes wide with wonder, reflecting the deep starry sky outside; ambient low-key lighting emphasizing her emotional awe and the futuristic hangar setting."
+    }
+  ]
+}

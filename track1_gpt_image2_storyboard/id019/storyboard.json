@@ -1,0 +1,23 @@
+{
+  "caption_summary": "A young red-haired woman excitedly buries a small figurine in sand on a balcony with an ocean view.",
+  "panels": [
+    {
+      "panel": 1,
+      "slug": "woman_burying_figurine",
+      "stage": "opening",
+      "description": "Close-up of a young Caucasian woman with voluminous red hair, freckles, and blue-green eyes with sharp winged eyeliner; she tilts her head up, smiling widely and excitedly, eyes shifting focus from the sand to the camera."
+    },
+    {
+      "panel": 2,
+      "slug": "upper_body_burying_sand",
+      "stage": "middle",
+      "description": "Medium shot showing the woman vigorously burying a small human figurine in fine white sand inside a container on a tiled floor; her upper body and hands actively covering the figurine."
+    },
+    {
+      "panel": 3,
+      "slug": "balcony_ocean_reveal",
+      "stage": "final",
+      "description": "Wide shot panning right from the woman to reveal the airy hotel balcony with tiled floor, the container of sand, and the vast, churning blue ocean stretching endlessly in the background under bright daylight."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "panels": [
+    {
+      "slug": "serve_ready_intense_gaze",
+      "stage": "opening",
+      "description": "Close-up on a young adult Caucasian male with short brown hair and stubble, gripping a yellow tennis ball high in his right hand, his intense brown eyes focused upward on the ball. Dim, warm overhead lighting casts shadows on his concentrated face, emphasizing his tense expression.",
+      "panel": 1
+    },
+    {
+      "slug": "scan_courtroom_seats",
+      "stage": "middle",
+      "description": "Medium shot pulling back to show the man scanning the dimly lit, wood-paneled formal jury box. His gaze shifts from the ball to sweeping the rows of empty courtroom seats around him; his posture remains poised and tense, the shadows from overhead lighting creating dramatic contrast on his face and surroundings.",
+      "panel": 2
+    },
+    {
+      "slug": "locked_gaze_challenger",
+      "stage": "final",
+      "description": "Wide shot revealing the man locking his gaze forward toward an invisible opponent. The camera pans right, revealing the full courtroom with dark wood panels and overhead lighting casting stark shadows that highlight the surreal tension of the scene. He stands ready to serve, tense and focused.",
+      "panel": 3
+    }
+  ],
+  "caption_summary": "A young man intensely prepares and scans the courtroom before locking eyes with an unseen opponent to serve a tennis ball inside a dim, wood-paneled jury box."
+}

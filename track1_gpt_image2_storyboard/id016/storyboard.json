@@ -1,0 +1,23 @@
+{
+  "panels": [
+    {
+      "description": "Medium close-up of a young Caucasian man with piercing blue eyes and light stubble, sitting in a dark, muddy battlefield trench, looking down intently as he folds a white origami paper, dim lantern light casting soft shadows on his focused face.",
+      "panel": 1,
+      "slug": "focused_origami_in_trench",
+      "stage": "opening"
+    },
+    {
+      "description": "Suddenly jerking his head up, the man gasps with mouth open, eyes wide and staring directly into the camera; the dim lantern light accentuates his startled expression, muddy trench walls slightly blurred as camera dollies closer.",
+      "panel": 2,
+      "slug": "head_jerk_gasp",
+      "stage": "turning_point"
+    },
+    {
+      "description": "Extreme close-up isolating the man's intense, wide blue eyes and open mouth as the camera swiftly rack-focuses to blur the muddy trench walls completely, highlighting the emotional shock in the dim candlelight.",
+      "panel": 3,
+      "slug": "startled_closeup_blur",
+      "stage": "final"
+    }
+  ],
+  "caption_summary": "Young man in a dark battlefield trench folds origami then suddenly gasps staring startlingly into the camera as lighting and focus emphasize his shock."
+}

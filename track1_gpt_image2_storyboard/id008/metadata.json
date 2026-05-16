@@ -1,0 +1,19 @@
+{
+  "id": "id008",
+  "source_img": "test_track1/final/images/id008.webp",
+  "source_image": "IPVG2026-Test-Track1/images/id008.webp",
+  "image_model": "gpt-image-2",
+  "text_model": "gpt-4.1-mini",
+  "panel_count": 3,
+  "size": "auto",
+  "quality": "medium",
+  "input_fidelity": null,
+  "created_at": "2026-05-16 12:07:43",
+  "storyboard_file": "track1_gpt_image2_storyboard/id008/storyboard.json",
+  "generated_images": [
+    "track1_gpt_image2_storyboard/id008/panel_00_character.png",
+    "track1_gpt_image2_storyboard/id008/panel_01_woman_gazing_down_at_interface.png",
+    "track1_gpt_image2_storyboard/id008/panel_02_woman_lifting_chin_turning_face.png",
+    "track1_gpt_image2_storyboard/id008/panel_03_woman_watching_starry_sky.png"
+  ]
+}

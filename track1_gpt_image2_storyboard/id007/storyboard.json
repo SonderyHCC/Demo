@@ -1,0 +1,23 @@
+{
+  "caption_summary": "A middle-aged woman intently hacks a cyborg in a dim billiard room, then freezes and locks eyes with the viewer.",
+  "panels": [
+    {
+      "panel": 1,
+      "slug": "focused_woman_hacking",
+      "stage": "opening",
+      "description": "Medium shot of a middle-aged Caucasian woman with shoulder-length brown hair and purple bead earrings, standing in a dimly lit billiard room with green felt tables; her head is bowed low, eyes scanning a glowing, translucent holographic interface with rapid blue data streams, expressing intense concentration."
+    },
+    {
+      "panel": 2,
+      "slug": "woman_freezes_and_lifts_chin",
+      "stage": "middle",
+      "description": "Close-up of the woman suddenly freezing, lifting her chin and shifting her gaze directly forward, eyes wide and determined, mouth set firm; the soft green ambient light of the billiard room casts subtle shadows around her face."
+    },
+    {
+      "panel": 3,
+      "slug": "camera_push_in_with_determined_gaze",
+      "stage": "final",
+      "description": "Slow dolly-in and slight left pan shot capturing the woman's confident, locked gaze directly at the camera, framed against the classic gentleman's club background with rich wood paneling and low warm lighting, emphasizing her determined expression and resolve."
+    }
+  ]
+}
